@@ -1,0 +1,29 @@
+
+/* Or, you can use margin */
+/* div.projects-list {
+  padding: 60px 20px;
+  
+}src/styles.css */
+
+
+.projectslist div {
+  display: run-in;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+/* Or, you can use margin */
+.projectslist button {
+  margin-right: 20px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

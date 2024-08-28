@@ -1,0 +1,18 @@
+/* src/components/Footer.css */
+.footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: center;
+    bottom: 0;
+    width: 100%;
+  }
+  .footer a {
+    color: white;
+    text-decoration: none;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
