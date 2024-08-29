@@ -6,20 +6,22 @@
 }src/styles.css */
 
 
-.projectslist div {
+.projects-list div {
   display: run-in;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+    background-color: white;
+
 }
 
 /* Button styles */
 /* Or, you can use margin */
-.projectslist button {
+.projects-list button {
   margin-right: 20px;
   padding: 8px 16px;
   border: none;
-  background-color: #007bff;
+  /* background-color: #007bff; */
   color: white;
   cursor: pointer;
 }

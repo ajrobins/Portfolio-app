@@ -6,6 +6,8 @@ import Skills from './components/Skills';
 import ProjectLists from './components/ProjectLists';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import customTheme from './theme'; 
+
 import './App.css'; // Assuming you have a global CSS file
 
 function App() {
@@ -30,9 +32,9 @@ function App() {
         <Element name="projects" className="section">
           <ProjectLists />
         </Element>
-        <Element name="contact" className="section">
+        {/* <Element name="contact" className="section">
           <Contact />
-        </Element>
+        </Element> */}
         <Footer scrollToSection={scrollToSection} />
       </div>
     </ChakraProvider>

@@ -43,6 +43,17 @@ function Skills() {
                 </MotionTr>
               </Thead>
               <Tbody>
+              <MotionTr
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  <Td colSpan={4}></Td>
+                  <Td></Td>
+                  <Td></Td>
+                  <Td></Td>
+                  <Td></Td>
+                </MotionTr>
                 <MotionTr
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}

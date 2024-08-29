@@ -1,29 +1,76 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import './Project.css';
+import { Box, Flex, Heading, Text, Image, Link } from '@chakra-ui/react';
 
 function Project({ title, description, link, image, video, gif }) {
   return (
-    <div className="project-item">
-      <h3>{title}</h3>
-      <p>{description}</p>
-
-      {image && <img src={image} alt={`${title} screenshot`} className="project-media" />}
+    <Flex
+      className="project-item"
+      direction={{ base: 'column', md: 'row' }}
+      align="center"
+      bg="gray.50"
+      p={4}
+      borderRadius="md"
+      boxShadow="md"
+      mb={6}
+    >
+      {/* Video Section */}
       {video && (
-        <div className="video-wrapper">
-          <ReactPlayer url={video} controls={true} width="100%" />
-        </div>
+        <Box
+          flex="1.5" // Increase the flex value for the video
+          maxW={{ base: '100%', md: '60%' }} // Increase the max width for larger screens
+          mr={{ base: 0, md: 6 }}
+          mb={{ base: 4, md: 0 }}
+        >
+          <ReactPlayer
+            url={video}
+            controls={true}
+            width="100%"
+            height="auto" // Ensures the video is visible
+          />
+        </Box>
       )}
-      {gif && <img src={gif} alt={`${title} gif`} className="project-media" />}
 
-      {/* Conditionally render the link */}
-      {link && (
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          View on GitHub
-        </a>
-      )}
-    
-    </div>
+      {/* Content Section */}
+      <Box flex="1">
+        <Heading as="h3" size="md" mb={2}>
+          {title}
+        </Heading>
+        <Text mb={4}>{description}</Text>
+
+        {image && (
+          <Image
+            src={image}
+            alt={`${title} screenshot`}
+            mb={4}
+            borderRadius="md"
+            maxWidth="100%"
+          />
+        )}
+
+        {gif && (
+          <Image
+            src={gif}
+            alt={`${title} gif`}
+            mb={4}
+            borderRadius="md"
+            maxWidth="100%"
+          />
+        )}
+
+        {link && (
+          <Link
+            href={link}
+            isExternal
+            color="teal.500"
+            fontWeight="bold"
+            mt={4}
+          >
+            View on GitHub
+          </Link>
+        )}
+      </Box>
+    </Flex>
   );
 }
 
