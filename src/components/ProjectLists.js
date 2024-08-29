@@ -34,7 +34,7 @@ function ProjectLists() {
   return (
     <Box
       display="grid"
-      gridTemplateColumns={{ base: '1fr', md: '0.6fr 1.9fr' }}
+      gridTemplateColumns={{ base: '1fr', md: '0.55fr 2fr' }}
       gap={6}
       p={gridPadding}   // Apply padding to the entire grid
     >
