@@ -36,7 +36,7 @@ function About() {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      minHeight="100vh" // Full viewport height
+      minHeight="50vh" // Full viewport height
       display="flex"
       flexDirection="column"
       justifyContent="center" // Center content vertically
