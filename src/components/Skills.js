@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Box, Heading, Table, Thead, Tbody, Tr, Th, Td, useBreakpointValue } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 const MotionBox = motion(Box);
 const MotionTr = motion(Tr);
 
 function Skills() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { triggerOnce: true });
+
   // Padding for the entire grid
   const gridPadding = useBreakpointValue({
     base: '2',    // Padding for smaller screens
@@ -20,6 +23,10 @@ function Skills() {
 
   return (
     <MotionBox
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       display="flex"
       flexDirection="column"
       justifyContent="center" // Center content vertically
@@ -51,7 +58,7 @@ function Skills() {
             size="md"
             color="green.400"
             textAlign={{ base: 'left', md: 'left' }}
-            ml={{ base: '5', md: '0' }} // 
+            ml={{ base: '5', md: '0' }} 
           >
             Skills
           </Heading>
@@ -67,7 +74,7 @@ function Skills() {
         >
           <MotionBox
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             width="100%"
           >
@@ -75,7 +82,7 @@ function Skills() {
               <Thead>
                 <MotionTr
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
                   <Th>Languages</Th>
@@ -96,7 +103,7 @@ function Skills() {
                   <MotionTr
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
                     transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   >
                     <Td>{skill.language}</Td>
