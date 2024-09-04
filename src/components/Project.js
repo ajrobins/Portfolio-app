@@ -8,7 +8,7 @@ function Project({ title, description, link, image, video, gif }) {
       className="project-item"
       direction={{ base: 'column', md: 'row' }}
       align="center"
-      bg="gray.50"
+      bg="gray.500"
       p={4}
       borderRadius="md"
       boxShadow="md"

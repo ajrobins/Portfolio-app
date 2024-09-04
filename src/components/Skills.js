@@ -32,7 +32,8 @@ function Skills() {
       justifyContent="center" // Center content vertically
       alignItems="center" // Center content horizontally
       minHeight="50vh" // Full viewport height for consistency
-      bg="#f4f4f4"
+      // bg="#f4f4f4"
+      
       p={gridPadding} // Use consistent padding
     >
       <Box
@@ -77,8 +78,12 @@ function Skills() {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             width="100%"
+            bg="gray.500"
+            borderRadius="md"
+            padding={4}
+
           >
-            <Table variant="simple" size="md">
+            <Table variant="unstyled" size="md">
               <Thead>
                 <MotionTr
                   initial={{ opacity: 0, y: 20 }}

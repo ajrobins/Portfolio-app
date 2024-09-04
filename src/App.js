@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { Element, scroller } from 'react-scroll'; 
+import { Element } from 'react-scroll'; 
 import Home from './components/Home';
 import Skills from './components/Skills';
 import ProjectLists from './components/ProjectLists';
@@ -20,10 +20,9 @@ function App() {
         <Element name="home" className="section">
           <Home />
         </Element>
-        <Element name="about" className="section">
+        {/* <Element name="about" className="section">
           <About />
-          </Element>
-        
+          </Element> */}
         <Element name="skills" className="section">
           <Skills />
         </Element>
