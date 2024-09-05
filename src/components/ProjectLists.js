@@ -51,11 +51,12 @@ function ProjectLists() {
         <Heading
           as="h2"
           size="md"
-          color="green.400"
+          color="#E01A23"
           textAlign="left"
           mb="4"
           // ml={{ md: '-80px' }}  // Slight left shift for alignment with other headers
           mr={{ md: '8' }}  // Extra margin-right for the header on large screens
+          mt={{ base: '0', md: '-5' }}
         >
           Projects
         </Heading>

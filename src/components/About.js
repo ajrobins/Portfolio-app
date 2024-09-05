@@ -62,12 +62,13 @@ function About() {
           <Heading
             as="h2"
             size="md"
-            color="green.400"
+            color="#E01A23"
             textAlign={{ base: 'left', md: 'left' }}
           >
             About Me
           </Heading>
         </Box>
+        {/* value: ["#335c67", "#fff3b0", "#e09f3e", "#9e2a2b", "#540b0e"], // Predefined array of colors */}
 
         {/* Content Section */}
         <MotionBox
@@ -89,7 +90,7 @@ function About() {
 
             <br /><br />
 
-            Currently, I am working as an <strong>LLM Training Assistant</strong> at DataAnnotation. In this role, I collaborate on training Large Language Models using Reinforcement Learning with Human Feedback. Alongside this, I'm dedicating time to familiarizing myself with game engines like <strong>Unity</strong> and <strong>Unreal Engine</strong>, expanding my skills and exploring new technologies. I have also been making this portfolio page!
+            Currently, I am working as an <strong>LLM Training Assistant</strong> at DataAnnotation. In this role, I collaborate on training Large Language Models to code using Reinforcement Learning with Human Feedback. Alongside this, I'm dedicating time to familiarizing myself with game engines like <strong>Unity</strong> and <strong>Unreal Engine</strong>, expanding my skills and exploring new technologies. I have also been making this portfolio page!
           </Text>
         </MotionBox>
       </Box>

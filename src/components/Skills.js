@@ -58,7 +58,7 @@ function Skills() {
           <Heading
             as="h2"
             size="md"
-            color="green.400"
+            color="#E01A23"
             textAlign={{ base: 'left', md: 'left' }}
             ml={{ base: '2', md: '0' }} 
             mt={{ base: '0', md: '0' }}
@@ -102,7 +102,7 @@ function Skills() {
         { language: 'Python', framework: 'PyTorch', tool: 'Docker', field: 'Web Development' },
         { language: 'Java', framework: 'Qt', tool: 'Git', field: 'AI/Deep Learning' },
         { language: 'JavaScript', framework: 'ROS', tool: 'Qt', field: '' },
-        { language: 'HTML/CSS', framework: '', tool: 'MySQL', field: '' },
+        { language: 'HTML/CSS', framework: 'React', tool: 'MySQL', field: '' },
       ].map((skill, index) => (
         <Tr key={index}>
           <Td>{skill.language}</Td>
