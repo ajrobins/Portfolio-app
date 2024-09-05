@@ -4,7 +4,6 @@ import { Element } from 'react-scroll';
 import Home from './components/Home';
 import Skills from './components/Skills';
 import ProjectLists from './components/ProjectLists';
-import Contact from './components/Contact';
 import About from './components/About';
 
 import Footer from './components/Footer';
@@ -20,18 +19,16 @@ function App() {
         <Element name="home" className="section">
           <Home />
         </Element>
-        {/* <Element name="about" className="section">
+        <Element name="about" className="section">
           <About />
-          </Element> */}
+          </Element>
         <Element name="skills" className="section">
           <Skills />
         </Element>
         <Element name="projects" className="section">
           <ProjectLists />
         </Element>
-        <Element name="contact" className="section">
-          <Contact />
-        </Element>
+        
         <Footer  />
       </div>
     </ChakraProvider>

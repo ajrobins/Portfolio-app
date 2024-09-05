@@ -24,16 +24,15 @@ function Skills() {
   return (
     <MotionBox
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      // initial={{ opacity: 0, y: 50 }}
+      // animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
+      // transition={{ duration: 0.8, ease: "easeOut" }}
       display="flex"
       flexDirection="column"
       justifyContent="center" // Center content vertically
       alignItems="center" // Center content horizontally
       minHeight="50vh" // Full viewport height for consistency
-      // bg="#f4f4f4"
-      
+      bg="gray.100"
       p={gridPadding} // Use consistent padding
     >
       <Box
@@ -42,6 +41,8 @@ function Skills() {
         gap={4}
         w="full" // Ensure the grid takes full width
         maxW="1200px" // Max width for large screens
+        overflowX="auto" width="100%"
+
       >
         {/* Header Section */}
         <Box
@@ -59,7 +60,9 @@ function Skills() {
             size="md"
             color="green.400"
             textAlign={{ base: 'left', md: 'left' }}
-            ml={{ base: '5', md: '0' }} 
+            ml={{ base: '2', md: '0' }} 
+            mt={{ base: '0', md: '0' }}
+            mb={{ base: '4', md: '0' }}
           >
             Skills
           </Heading>
@@ -78,47 +81,39 @@ function Skills() {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             width="100%"
-            bg="gray.500"
             borderRadius="md"
-            padding={4}
+            ml={{ base: '-2', md: '0' }}
 
           >
-            <Table variant="unstyled" size="md">
-              <Thead>
-                <MotionTr
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  <Th>Languages</Th>
-                  <Th>Frameworks</Th>
-                  <Th>Tools</Th>
-                  <Th>Fields</Th>
-                </MotionTr>
-              </Thead>
-              <Tbody>
-                {[
-                  { language: 'C++', framework: 'Flask', tool: 'OpenGL', field: 'Game Development' },
-                  { language: 'C', framework: 'Django', tool: 'Vulkan', field: 'Robotics' },
-                  { language: 'Python', framework: 'PyTorch', tool: 'Docker', field: 'Web Development' },
-                  { language: 'Java', framework: 'Qt', tool: 'Git', field: 'AI/Deep Learning' },
-                  { language: 'JavaScript', framework: 'ROS', tool: 'Qt', field: '' },
-                  { language: 'HTML/CSS', framework: '', tool: 'MySQL', field: '' },
-                ].map((skill, index) => (
-                  <MotionTr
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  >
-                    <Td>{skill.language}</Td>
-                    <Td>{skill.framework}</Td>
-                    <Td>{skill.tool}</Td>
-                    <Td>{skill.field}</Td>
-                  </MotionTr>
-                ))}
-              </Tbody>
-            </Table>
+<Box >
+  <Table variant="simple" size={{base: "sm", md: "md"}} mr={{base: 10}}>
+    <Thead>
+      <Tr>
+        <Th>Languages</Th>
+        <Th>Frameworks</Th>
+        <Th>Tools</Th>
+        <Th>Fields</Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+      {[
+        { language: 'C++', framework: 'Flask', tool: 'OpenGL', field: 'Game Development' },
+        { language: 'C', framework: 'Django', tool: 'Vulkan', field: 'Robotics' },
+        { language: 'Python', framework: 'PyTorch', tool: 'Docker', field: 'Web Development' },
+        { language: 'Java', framework: 'Qt', tool: 'Git', field: 'AI/Deep Learning' },
+        { language: 'JavaScript', framework: 'ROS', tool: 'Qt', field: '' },
+        { language: 'HTML/CSS', framework: '', tool: 'MySQL', field: '' },
+      ].map((skill, index) => (
+        <Tr key={index}>
+          <Td>{skill.language}</Td>
+          <Td>{skill.framework}</Td>
+          <Td>{skill.tool}</Td>
+          <Td>{skill.field}</Td>
+        </Tr>
+      ))}
+    </Tbody>
+  </Table>
+</Box>
           </MotionBox>
         </Box>
       </Box>

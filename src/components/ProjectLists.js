@@ -21,6 +21,11 @@ function ProjectLists() {
 
   return (
     <Box
+    w="full"
+    bg="gray.50"
+
+    >
+    <Box
       display="grid"
       gridTemplateColumns={{ base: '1fr', md: 'auto 1fr' }}
       gap={6}
@@ -29,6 +34,8 @@ function ProjectLists() {
       w="full"
       mx="auto"  // Center the entire grid horizontally
       alignItems="start"
+      bg="gray.50"
+
     >
       <Box
         gridColumn={{ base: '1 / -1', md: '1 / 2' }}
@@ -80,6 +87,8 @@ function ProjectLists() {
         </motion.div>
       </Box>
     </Box>
+  </Box>
+
   );
 }
 
