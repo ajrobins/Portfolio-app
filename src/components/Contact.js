@@ -41,8 +41,8 @@ function Contact() {
       justifyContent="center" // Center content vertically
       alignItems="center" // Center content horizontally
       p={gridPadding} // Use consistent padding
-      bg="#f4f4f4"
-    >
+      bg="gray.500"
+      >
       <Box
         display="grid"
         gridTemplateColumns={{ base: '1fr', md: 'auto 1fr' }}
