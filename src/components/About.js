@@ -83,14 +83,15 @@ function About() {
         >
           <Text fontSize="md" lineHeight="tall" mb={4}>
 
-            I'm a dedicated software developer with expertise in <strong>multiple fields, programming languages and frameworks</strong>. My journey in technology began with an interest in AI, which has since evolved to include web development, robotics and game development. I thrive when being challenged and I'm always looking for new things to learn. I'm always happy to work on my own but I am very effective in a team environment.
-            <br /><br />
+          I'm a software engineer who recently graduated with a BSc MEng in Computer Science from the <strong>University of Leeds</strong>, earning a 2:1 with Honors. Throughout my degree, I've had many focuses, with the main ones being robotics, graphics/game development, web development, and AI. 
 
-            I recently graduated with a BSc MEng in Computer Science from the <strong>University of Leeds</strong>, earning a 2:1 with Honors. Based in <strong>Leeds</strong>, I'm exploring new opportunities and am eager to apply my skills in a dynamic and growth-oriented environment. I am open to roles in the area as well as remote positions.
+<br /><br />
 
-            <br /><br />
+Based in <strong>Leeds</strong>, I'm currently looking for jobs nearby or remote. My main goal is to keep learning and creating after university, whether that be learning more about a familiar field, or delving into a new one. If you can help with that, please get in touch!
 
-            Currently, I am working as an <strong>LLM Training Assistant</strong> at DataAnnotation. In this role, I collaborate on training Large Language Models to code using Reinforcement Learning with Human Feedback. Alongside this, I'm dedicating time to familiarizing myself with game engines like <strong>Unity</strong> and <strong>Unreal Engine</strong>, expanding my skills and exploring new technologies. I have also been making this portfolio page!
+<br /><br /> 
+
+            Currently, I'm working as an <strong>LLM Training Assistant</strong> at DataAnnotation. In this role, I collaborate on training Large Language Models to code to a high standard by providing comprehensive feedback to their responses after assessing their code, supporting the reinforcement learning of the models. These involve short tasks in various tech domains, but what I really want is to get involved in more long-term projects. Alongside this, I'm dedicating time to familiarizing myself with game engines like <strong>Unity</strong> and <strong>Unreal Engine</strong>, expanding my skills and exploring new technologies. I have also been making this portfolio page, boosting my JavaScript knowledge with React!
           </Text>
         </MotionBox>
       </Box>
