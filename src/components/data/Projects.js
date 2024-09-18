@@ -17,13 +17,7 @@ const projects = [
       // link: "https://github.com/yourusername/3d-graphics-engine",
       video: '/media/flight_sim.mp4',
     },
-    {
-      id: 2,
-      title: "Autonomous Robot",
-      description: "A robot that navigates obstacles autonomously.",
-      category: "Robotics",
-      // link: "https://github.com/yourusername/autonomous-robot"
-    },
+  
     {
       id: 3,
       title: "Personal Website",
@@ -39,7 +33,16 @@ const projects = [
       // link: "https://github.com/yourusername/personal-website",
       video: '/media/character_rigging.mp4',
 
+    },
+    {
+      id: 6,
+      title: "OpenGL Raytracer",
+      description: "Built a basic raytracer in C++ and OpenGL. Implemented Phong shading model with shadows and reflections.",
+      category: "Graphics",
+      image: '/media/raytracer.png',
+      // link: "https://github.com/yourusername/autonomous-robot"
     }
+
   ];
   
   export default projects;

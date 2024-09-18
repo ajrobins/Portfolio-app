@@ -17,8 +17,8 @@ function Project({ title, description, link, image, video, gif }) {
       {/* Video Section */}
       {video && (
         <Box
-          flex="1.5" // Increase the flex value for the video
-          maxW={{ base: '100%', md: '60%' }} // Increase the max width for larger screens
+          flex="1.5"
+          maxW={{ base: '100%', md: '60%' }}
           mr={{ base: 0, md: 6 }}
           mb={{ base: 4, md: 0 }}
         >
@@ -26,7 +26,31 @@ function Project({ title, description, link, image, video, gif }) {
             url={video}
             controls={true}
             width="100%"
-            height="auto" // Ensures the video is visible
+            height="auto"
+          />
+        </Box>
+      )}
+
+      {/* Image Section */}
+      {image && (
+        <Box
+          flex="1.5"
+          display="flex"
+          // alignItems="center"
+          justifyContent="center"
+          maxW={{ base: '100%', md: '60%' }}
+          // maxH="300px" // Adjust the max height as needed
+          mr={{ base: 0, md: 6 }}
+          mb={{ base: 4, md: 0 }}
+        >
+          <Image
+            src={image}
+            alt={`${title} screenshot`}
+          
+            borderRadius="md"
+            objectFit="cover" // Ensures the image doesn't stretch
+            maxH="80%" // Makes the image responsive to the column's height
+            maxW="80%" // Ensures the image width doesn't overflow
           />
         </Box>
       )}
@@ -37,16 +61,6 @@ function Project({ title, description, link, image, video, gif }) {
           {title}
         </Heading>
         <Text mb={4}>{description}</Text>
-
-        {image && (
-          <Image
-            src={image}
-            alt={`${title} screenshot`}
-            mb={4}
-            borderRadius="md"
-            maxWidth="100%"
-          />
-        )}
 
         {gif && (
           <Image
