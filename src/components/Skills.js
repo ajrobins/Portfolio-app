@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Box, Heading, Table, Thead, Tbody, Tr, Th, Td, useBreakpointValue } from '@chakra-ui/react';
 import { motion, useInView } from 'framer-motion';
 
@@ -7,7 +7,27 @@ const MotionTr = motion(Tr);
 
 function Skills() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { triggerOnce: true });
+  const [isInView, setIsInView] = useState(false);
+
+  // Set up IntersectionObserver to track visibility
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.2 } // Different thresholds based on visibility
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [ref.current]);
 
   // Padding for the entire grid
   const gridPadding = useBreakpointValue({
@@ -24,9 +44,6 @@ function Skills() {
   return (
     <MotionBox
       ref={ref}
-      // initial={{ opacity: 0, y: 50 }}
-      // animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
-      // transition={{ duration: 0.8, ease: "easeOut" }}
       display="flex"
       flexDirection="column"
       justifyContent="center" // Center content vertically
@@ -41,8 +58,6 @@ function Skills() {
         gap={4}
         w="full" // Ensure the grid takes full width
         maxW="1200px" // Max width for large screens
-        overflowX="auto" width="100%"
-
       >
         {/* Header Section */}
         <Box
@@ -69,53 +84,48 @@ function Skills() {
         </Box>
 
         {/* Skills Table Section */}
-        <Box
+        <MotionBox
+          className="SKILLS"
+
+          // initial={{ opacity: 0, x: '100vw' }} // Start off-screen to the right
+          // animate={{ opacity: isInView ? 1 : 1, x: isInView ? 0 : '100vw' }} // Move to the left and fade in
+          // transition={{ duration: 0.5, ease: "easeOut" }} // Same duration and easing as About
+          // transitionDelay={"1"}
           gridColumn={{ base: '1 / -1', md: '2 / 3' }}
           display="flex"
           alignItems="center"
           position="relative"
           pl={{ base: '0', md: '8' }} // Extra padding on the left for the content on large screens
         >
-          <MotionBox
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            width="100%"
-            borderRadius="md"
-            ml={{ base: '-2', md: '0' }}
-
-          >
-<Box >
-  <Table variant="simple" size={{base: "sm", md: "md"}} mr={{base: 10}}>
-    <Thead>
-      <Tr>
-        <Th>Languages</Th>
-        <Th>Frameworks</Th>
-        <Th>Tools</Th>
-        <Th>Fields</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      {[
-        { language: 'C++', framework: 'Flask', tool: 'OpenGL', field: 'Game Development' },
-        { language: 'C', framework: 'Django', tool: 'Vulkan', field: 'Robotics' },
-        { language: 'Python', framework: 'PyTorch', tool: 'Docker', field: 'Web Development' },
-        { language: 'Java', framework: 'Qt', tool: 'Git', field: 'AI/Deep Learning' },
-        { language: 'JavaScript', framework: 'ROS', tool: 'Qt', field: '' },
-        { language: 'HTML/CSS', framework: 'React', tool: 'MySQL', field: '' },
-      ].map((skill, index) => (
-        <Tr key={index}>
-          <Td>{skill.language}</Td>
-          <Td>{skill.framework}</Td>
-          <Td>{skill.tool}</Td>
-          <Td>{skill.field}</Td>
-        </Tr>
-      ))}
-    </Tbody>
-  </Table>
-</Box>
-          </MotionBox>
-        </Box>
+          <Box>
+            <Table variant="simple" size={{base: "sm", md: "md"}} mr={{base: 10}}>
+              <Thead>
+                <Tr>
+                  <Th>Languages</Th>
+                  <Th>Frameworks</Th>
+                  <Th>Tools</Th>
+                  <Th>Fields</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {[{ language: 'C++', framework: 'Flask', tool: 'OpenGL', field: 'Game Development' },
+                  { language: 'C', framework: 'Django', tool: 'Vulkan', field: 'Robotics' },
+                  { language: 'Python', framework: 'PyTorch', tool: 'Docker', field: 'Web Development' },
+                  { language: 'Java', framework: 'Qt', tool: 'Git', field: 'AI/Deep Learning' },
+                  { language: 'JavaScript', framework: 'ROS', tool: 'Qt', field: '' },
+                  { language: 'HTML/CSS', framework: 'React', tool: 'MySQL', field: '' }]
+                  .map((skill, index) => (
+                    <MotionTr key={index}>
+                      <Td>{skill.language}</Td>
+                      <Td>{skill.framework}</Td>
+                      <Td>{skill.tool}</Td>
+                      <Td>{skill.field}</Td>
+                    </MotionTr>
+                  ))}
+              </Tbody>
+            </Table>
+          </Box>
+        </MotionBox>
       </Box>
     </MotionBox>
   );
